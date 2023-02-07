@@ -3,7 +3,7 @@ package study;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import stringCalculator.StringCalculator;
+import study.stringCalculator.StringCalculator;
 
 public class StringCalculatorTest {
 
