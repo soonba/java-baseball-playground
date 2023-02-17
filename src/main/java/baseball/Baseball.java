@@ -6,9 +6,24 @@ import java.util.*;
 public class Baseball {
 
     private final Balls comBalls;
+    private boolean gameEnd = false;
 
     public Baseball(Balls comBalls) {
         this.comBalls = comBalls;
+    }
+    public PlayResult play(List<Ball> balls) {
+        PlayResult result = new PlayResult();
+        for (Ball aBall : balls) {
+            result.apply(comBalls.play(aBall));
+        }
+        if(result.isEnd()) {
+            gameEnd = true;
+        }
+        return result;
+    }
+
+    public boolean endGame() {
+        return gameEnd;
     }
 
     public static List<Ball> mapToBallList(String s) throws NumberFormatException, InvalidParameterException {
@@ -27,13 +42,5 @@ public class Baseball {
             ballList.add(new Ball(i+1, Integer.parseInt(split[i])));
         }
         return ballList;
-    }
-
-    public PlayResult play(List<Ball> balls) {
-        PlayResult result = new PlayResult();
-        for (Ball aBall : balls) {
-            result.apply(comBalls.play(aBall));
-        }
-        return result;
     }
 }
