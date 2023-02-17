@@ -1,0 +1,39 @@
+package baseball;
+
+import java.security.InvalidParameterException;
+import java.util.*;
+
+public class Baseball {
+
+    private final Balls comBalls;
+
+    public Baseball(Balls comBalls) {
+        this.comBalls = comBalls;
+    }
+
+    public static List<Ball> mapToBallList(String s) throws NumberFormatException, InvalidParameterException {
+        String[] split = s.split("");
+        if(split.length != 3) {
+            throw new InvalidParameterException("3자리 숫자를 입력해주세요.");
+        }
+
+        Set<String> validSet = new HashSet<>(Arrays.asList(split));
+        if(validSet.size() != 3) {
+            throw new InvalidParameterException("중복된 숫자가 없게 해주세요.");
+        }
+
+        List<Ball> ballList = new ArrayList<>();
+        for (int i = 0; i < split.length; i++) {
+            ballList.add(new Ball(i+1, Integer.parseInt(split[i])));
+        }
+        return ballList;
+    }
+
+    public PlayResult play(List<Ball> balls) {
+        PlayResult result = new PlayResult();
+        for (Ball aBall : balls) {
+            result.apply(comBalls.play(aBall));
+        }
+        return result;
+    }
+}
