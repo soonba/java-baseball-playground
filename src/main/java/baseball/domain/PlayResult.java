@@ -3,11 +3,14 @@ package baseball.domain;
 import baseball.domain.constants.BallStatus;
 
 public class PlayResult {
-    private int ball = 0;
-    private int strike = 0;
+
+    private static final Integer END_GAME_STRIKE_CONDITION = 3;
+    private static final Integer INIT_COUNT = 0;
+    private int ball = INIT_COUNT;
+    private int strike = INIT_COUNT;
 
     public boolean isNothing() {
-        return ball == 0 && strike == 0;
+        return ball == INIT_COUNT && strike == INIT_COUNT;
     }
     public Integer getBall() {
         return ball;
@@ -27,6 +30,6 @@ public class PlayResult {
     }
 
     public boolean isEnd() {
-        return this.strike == 3;
+        return this.strike == END_GAME_STRIKE_CONDITION;
     }
 }
