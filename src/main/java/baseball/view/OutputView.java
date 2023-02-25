@@ -5,11 +5,11 @@ import baseball.domain.PlayResult;
 public class OutputView {
 
     public static void printResult(PlayResult playResult) {
-        if(playResult.isNothing()) {
-            System.out.println("낫싱");
-            return;
-        }
-        System.out.println(playResult.getBall()+"볼 "+ playResult.getStrike()+"스트라이크");
+        StringBuilder sb = new StringBuilder();
+        if(playResult.isNothing()) sb.append("낫싱");
+        if(playResult.hasBall()) sb.append(playResult.getBall()).append("볼 ");
+        if(playResult.hasStrike()) sb.append(playResult.getStrike()).append("스트라이크");
+        System.out.println(sb);
     }
 
     public static void printEndMessage() {

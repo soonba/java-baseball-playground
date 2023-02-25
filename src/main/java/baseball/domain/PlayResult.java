@@ -12,6 +12,9 @@ public class PlayResult {
     public boolean isNothing() {
         return ball == INIT_COUNT && strike == INIT_COUNT;
     }
+    public boolean hasBall() { return ball != INIT_COUNT; }
+    public boolean hasStrike() { return strike != INIT_COUNT; }
+
     public Integer getBall() {
         return ball;
     }
