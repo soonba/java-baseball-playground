@@ -1,8 +1,10 @@
-package baseball;
+package baseball.view;
+
+import baseball.domain.PlayResult;
 
 public class OutputView {
 
-    static void printResult(PlayResult playResult) {
+    public static void printResult(PlayResult playResult) {
         if(playResult.isNothing()) {
             System.out.println("낫싱");
             return;
@@ -10,7 +12,7 @@ public class OutputView {
         System.out.println(playResult.getBall()+"볼 "+ playResult.getStrike()+"스트라이크");
     }
 
-    static void printEndMessage() {
+    public static void printEndMessage() {
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 

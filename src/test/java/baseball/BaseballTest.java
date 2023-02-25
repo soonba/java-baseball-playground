@@ -1,5 +1,9 @@
 package baseball;
 
+import baseball.domain.Ball;
+import baseball.domain.Balls;
+import baseball.domain.Baseball;
+import baseball.domain.PlayResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

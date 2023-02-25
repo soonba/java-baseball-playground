@@ -1,4 +1,8 @@
-package baseball;
+package baseball.domain;
+
+import baseball.utils.RandomBallsGenerator;
+import baseball.view.InputView;
+import baseball.view.OutputView;
 
 import java.io.IOException;
 
@@ -6,7 +10,7 @@ public class Game {
     private final Balls comBalls = RandomBallsGenerator.apply();
     private final Baseball baseball = new Baseball(comBalls);
 
-    void start() throws IOException {
+    public void start() throws IOException {
         OutputView.printStartMessage();
         while (!baseball.endGame()) {
             OutputView.printInputRequestMessage();

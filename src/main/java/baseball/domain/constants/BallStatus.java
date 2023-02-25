@@ -1,19 +1,19 @@
-package baseball;
+package baseball.domain.constants;
 
 public enum BallStatus {
     STRIKE,
     BALL,
     NOTHING;
 
-    boolean isNothing() {
+    public boolean isNothing() {
         return this.equals(BallStatus.NOTHING);
     }
 
-    boolean isStrike() {
+    public boolean isStrike() {
         return this.equals(BallStatus.STRIKE);
     }
 
-    boolean isBall() {
+    public boolean isBall() {
         return this.equals(BallStatus.BALL);
     }
 

@@ -1,6 +1,10 @@
-package baseball;
+package baseball.domain;
+
+import baseball.domain.constants.BallStatus;
 
 public class Ball {
+    private static final int MIN_NUMBER = 1;
+    private static final int MAX_NUMBER = 9;
     private final int value;
     private final int location;
 
@@ -10,7 +14,7 @@ public class Ball {
     }
 
     private static int validateValue(int num) {
-        if (!(num >= 1 && num <= 9)) {
+        if (!(num >= MIN_NUMBER && num <= MAX_NUMBER)) {
             throw new IllegalArgumentException("값은 1부터 9사이 여야합니다.");
         }
         return num;

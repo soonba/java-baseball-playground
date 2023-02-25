@@ -1,4 +1,6 @@
-package baseball;
+package baseball.domain;
+
+import baseball.domain.constants.BallStatus;
 
 public class PlayResult {
     private int ball = 0;
