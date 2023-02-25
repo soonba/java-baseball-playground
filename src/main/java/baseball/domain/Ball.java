@@ -1,7 +1,5 @@
 package baseball.domain;
 
-import baseball.domain.constants.BallStatus;
-
 public class Ball {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 9;

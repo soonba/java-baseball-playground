@@ -1,7 +1,7 @@
 package baseball;
 
 import baseball.domain.Ball;
-import baseball.domain.constants.BallStatus;
+import baseball.domain.BallStatus;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

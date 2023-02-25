@@ -1,7 +1,5 @@
 package baseball.domain;
 
-import baseball.domain.constants.BallStatus;
-
 public class PlayResult {
 
     private static final Integer END_GAME_STRIKE_CONDITION = 3;

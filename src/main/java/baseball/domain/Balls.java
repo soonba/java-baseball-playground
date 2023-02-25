@@ -1,7 +1,5 @@
 package baseball.domain;
 
-import baseball.domain.constants.BallStatus;
-
 import java.util.ArrayList;
 import java.util.List;
 
