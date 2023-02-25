@@ -5,6 +5,8 @@ import java.util.*;
 
 public class Baseball {
 
+    private static final Integer BALL_SIZE = 3;
+
     private final Balls comBalls;
     private boolean gameEnd = false;
 
@@ -28,12 +30,12 @@ public class Baseball {
 
     public static List<Ball> mapToBallList(String s) throws NumberFormatException, InvalidParameterException {
         String[] split = s.split("");
-        if(split.length != 3) {
+        if(split.length != BALL_SIZE) {
             throw new InvalidParameterException("3자리 숫자를 입력해주세요.");
         }
 
         Set<String> validSet = new HashSet<>(Arrays.asList(split));
-        if(validSet.size() != 3) {
+        if(validSet.size() != BALL_SIZE) {
             throw new InvalidParameterException("중복된 숫자가 없게 해주세요.");
         }
 
