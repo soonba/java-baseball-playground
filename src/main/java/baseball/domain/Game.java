@@ -1,13 +1,15 @@
 package baseball.domain;
 
-import baseball.utils.RandomBallsGenerator;
 import baseball.view.ErrorView;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class Game {
-    private final Balls comBalls = RandomBallsGenerator.apply();
-    private final Baseball baseball = new Baseball(comBalls);
+    private final Baseball baseball;
+
+    public Game(Balls comBalls) {
+        this.baseball = new Baseball(comBalls);
+    }
 
     public void start() {
         OutputView.printStartMessage();
